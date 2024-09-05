@@ -6,7 +6,7 @@ const Main = () => {
     return (
         <div className="grid relative grid-cols-4">
             {/* sidebar nav */}
-            <div className="bg-black sticky top-0 left-0   flex flex-col items-center h-screen overflow-scroll">
+            <div className="bg-black sticky top-0 left-0  flex flex-col items-center h-screen overflow-scroll">
                 <SidebarNav/>
             </div>
             {/* main home */}

@@ -6,7 +6,7 @@ import { TfiInstagram } from "react-icons/tfi";
 
 const SiderbarRight = () => {
     return (
-        <div className="pt-2 font-fontpp">
+        <div className="pt-2 pb-36 font-fontpp">
             {/* search bar */}
             <div className="top-0 left-0 sticky bg-black">
                 <label className="input input-bordered rounded-2xl flex py-8 bg-stone-600 text-yellow-50 items-center gap-2">
@@ -130,9 +130,9 @@ const SiderbarRight = () => {
             {/* 
             ---------Who to follow
             */}
-            <div className="border-2 mt-6 rounded-2xl p-3 border-slate-500">
+            <div className="border-2 mt-8 rounded-2xl p-3 border-slate-500">
                 <h3 className="text-3xl font-semibold">Who to follow</h3>
-                <div className="flex pt-3 justify-between items-center">
+                <div className="flex pt-8 justify-between items-center">
                     <div className="flex items-center gap-4">
                         <SiFlipkart className="text-5xl" />
                         <div>
@@ -164,7 +164,23 @@ const SiderbarRight = () => {
                     </div>
                     <button className="btn text-xl">Follow</button>
                 </div>
-                
+                <a href="#" className="text-emerald-300 text-xl font-medium mt-5">Show More</a>
+            </div>
+            {/* priviccy */}
+            <div className="pt-8 mb-8">
+                    <ul className="flex  font-medium items-center gap-4">
+                        <li>Terms of Service</li>
+                        <li> Privacy Policy</li>
+                        <li>Cookie Policy
+                        </li>
+                    </ul>
+                    {/* second */}
+                    <ul className="flex font-medium items-center gap-4">
+                        <li> Accessibility</li>
+                        <li>...More </li>
+                        <li>© 2024 X Corp.
+                        </li>
+                    </ul>
             </div>
         </div>
     );

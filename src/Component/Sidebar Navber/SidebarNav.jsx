@@ -20,7 +20,7 @@ const SidebarNav = () => {
             {/* nav link */}
             <ul className="text-3xl tracking-tight flex flex-col gap-6">
                 <li className=" hover:bg-slate-100 hover:text-black hover:rounded-3xl py-2 px-2">
-                    <NavLink className='flex items-center  gap-4'>
+                    <NavLink to='/' className='flex items-center  gap-4'>
                         <IoMdHome className="text-4xl" /><span>Home</span>
                     </NavLink>
                 </li>
