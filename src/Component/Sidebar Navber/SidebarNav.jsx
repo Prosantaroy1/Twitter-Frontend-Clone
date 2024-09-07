@@ -12,7 +12,7 @@ import { NavLink } from "react-router-dom";
 
 const SidebarNav = () => {
     return (
-        <div className="font-fontpp text-white pl-16 flex lg:items-center md:items-center xl:items-start  flex-col gap-8 pt-9">
+        <div className="font-fontpp overflow-y-hidden text-white pl-16 flex lg:items-center md:items-center xl:items-start  flex-col gap-8 pt-9">
             {/* logo */}
             <div className="mx-2 ">
                 <BsTwitterX className="text-4xl" />
@@ -25,32 +25,32 @@ const SidebarNav = () => {
                     </NavLink>
                 </li>
                 <li className=" hover:bg-slate-100 hover:text-black hover:rounded-3xl py-2 px-2">
-                    <NavLink className='flex items-center gap-4'>
+                    <NavLink to='/expolre' className='flex items-center gap-4'>
                         <IoSearch className="text-4xl" /><span className="lg:hidden md:hidden xl:flex">Explore</span>
                     </NavLink>
                 </li>
                 <li className=" hover:bg-slate-100 hover:text-black hover:rounded-3xl py-2 px-2">
-                    <NavLink className='flex items-center gap-4'>
+                    <NavLink to='/notification' className='flex items-center gap-4'>
                         <IoMdNotifications className="text-4xl" /><span className="lg:hidden md:hidden xl:flex">Notifications</span>
                     </NavLink>
                 </li>
                 <li className=" hover:bg-slate-100 hover:text-black hover:rounded-3xl py-2 px-2">
-                    <NavLink className='flex items-center gap-4'>
+                    <NavLink to='/message' className='flex items-center gap-4'>
                         <FiMessageSquare className="text-4xl" /><span className="lg:hidden md:hidden xl:flex">Messages</span>
                     </NavLink>
                 </li>
                 <li className=" hover:bg-slate-100 hover:text-black hover:rounded-3xl py-2 px-2">
-                    <NavLink className='flex items-center gap-4'>
+                    <NavLink to='/' className='flex items-center gap-4'>
                         <LuServerCrash className="text-4xl" /><span className="lg:hidden md:hidden xl:flex">Grok</span>
                     </NavLink>
                 </li>
                 <li className=" hover:bg-slate-100 hover:text-black hover:rounded-3xl py-2 px-2">
-                    <NavLink className='flex items-center gap-4'>
+                    <NavLink to='/' className='flex items-center gap-4'>
                         <FaUserGroup className="text-4xl" /><span className="lg:hidden md:hidden xl:flex">Communities</span>
                     </NavLink>
                 </li>
                 <li className=" hover:bg-slate-100 hover:text-black hover:rounded-3xl py-3 px-2">
-                    <NavLink className='flex items-center gap-4'>
+                    <NavLink to='/profile' className='flex items-center gap-4'>
                         <FaUser className="text-4xl" /><span className="lg:hidden md:hidden xl:flex">Profile</span>
                     </NavLink>
                 </li>
@@ -67,10 +67,12 @@ const SidebarNav = () => {
             </ul>
             {/* User Profile */}
             <div className="flex hover:bg-slate-300 hover:text-black px-2 py-2 hover:rounded-3xl  items-center gap-12 justify-center">
-                {/* user img */}
-                <div><FaUserCircle className="text-6xl" /></div>
+                <NavLink to='/profile'>
+                    {/* user img */}
+                    <div><FaUserCircle className="text-6xl" /></div>
+                </NavLink>
                 {/* user name */}
-                <div className="lg:hidden md:hidden xl:flex">
+                <div className="lg:hidden md:hidden xl:flex flex-col ">
                     <h4 className="text-2xl font-semibold">Prosanta Roy</h4>
                     <p className="text-xl font-normal">@royprosanta</p>
                 </div>

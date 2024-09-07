@@ -1,6 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
-import MainHome from "../Component/Main Content/MainHome";
+
+import Home from "../Component/pages/Home Page/Home";
+import Expolre from "../Component/pages/Expolre page/Expolre";
+import Notification from "../Component/pages/Notification/Notification";
+import Message from "../Component/pages/Message/Message";
+import Profile from "../Component/pages/Profile/Profile";
 
 
 const router = createBrowserRouter([
@@ -10,7 +15,23 @@ const router = createBrowserRouter([
         children: [
              {
                 path: '/',
-                element: <MainHome/>
+                element: <Home/>
+             },
+             {
+                path:'/expolre',
+                element: <Expolre/>
+             },
+             {
+                path: '/notification',
+                element: <Notification/>
+             },
+             {
+                path: '/message',
+                element: <Message/>
+             },
+             {
+                path: '/profile',
+                element: <Profile/>
              }
         ]
     }
