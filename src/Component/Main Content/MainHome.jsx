@@ -11,9 +11,9 @@ import img5 from '../../assets/imgPost/post4.jfif'
 const MainHome = () => {
     return (
         <>
-        <div className="h-auto font-fontpp">
+        <div className="font-fontpp relative">
             {/* main navber */} 
-            <div className={`bg-black px-40 text-white shadow  sticky py-6 border-b-2 border-slate-500 top-0 left-0`}>
+            <div className='px-4 text-white shadow  py-6 border-b-2 border-slate-500'>
                 <ul className="flex  justify-between items-center">
                     <li className="text-2xl font-semibold"><NavLink to='/'>For you</NavLink></li>
                     <li className="text-2xl font-semibold"><NavLink>Following</NavLink></li>
