@@ -15,7 +15,9 @@ const SidebarNav = () => {
         <div className="font-fontpp overflow-y-hidden text-white pl-16 flex lg:items-center md:items-center xl:items-start  flex-col gap-8 pt-9">
             {/* logo */}
             <div className="mx-2 ">
-                <BsTwitterX className="text-4xl" />
+                <NavLink to='/'>
+                    <BsTwitterX className="text-4xl" />
+                </NavLink>
             </div>
             {/* nav link */}
             <ul className="text-3xl tracking-tight flex lg:items-center md:items-center xl:items-start   flex-col gap-6">
@@ -45,7 +47,7 @@ const SidebarNav = () => {
                     </NavLink>
                 </li>
                 <li className=" hover:bg-slate-100 hover:text-black hover:rounded-3xl py-2 px-2">
-                    <NavLink to='/' className='flex items-center gap-4'>
+                    <NavLink to='/users' className='flex items-center gap-4'>
                         <FaUserGroup className="text-4xl" /><span className="lg:hidden md:hidden xl:flex">Communities</span>
                     </NavLink>
                 </li>
@@ -73,8 +75,10 @@ const SidebarNav = () => {
                 </NavLink>
                 {/* user name */}
                 <div className="lg:hidden md:hidden xl:flex flex-col ">
-                    <h4 className="text-2xl font-semibold">Prosanta Roy</h4>
-                    <p className="text-xl font-normal">@royprosanta</p>
+                    <NavLink to='/profile'>
+                        <h4 className="text-2xl font-semibold">Prosanta Roy</h4>
+                        <p className="text-xl font-normal">@royprosanta</p>
+                    </NavLink>
                 </div>
                 {/* edit */}
                 <h3 className="lg:hidden md:hidden xl:flex"><HiDotsHorizontal className="text-4xl" /></h3>

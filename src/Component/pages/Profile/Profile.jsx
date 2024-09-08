@@ -1,8 +1,22 @@
+import { useContext } from "react";
 import { CgProfile } from "react-icons/cg";
 import { FaCamera } from "react-icons/fa";
+import { AuthContent } from "../../../Provider/AuthProvider";
 
 
 const Profile = () => {
+    // 
+    const {logoutUser}=useContext(AuthContent);
+    // 
+    const handleLogout=()=>{
+        logoutUser()
+        .then(res=>{
+            const user=res.user;
+            console.log(user)
+        })
+    }
+
+
     return (
         <div className="h-screen">
             <div className="container text-white mx-auto px-3">
@@ -19,6 +33,8 @@ const Profile = () => {
                         <h4 className="text-2xl font-semibold">Prosanta Roy</h4>
                         <p className="text-xl font-normal">@royprosanta</p>
                     </div>
+                    {/* logout */}
+                    <button onClick={handleLogout} className="bg-[#18ff93] text-white px-4 py-2 text-2xl rounded-lg font-medium">LogOut</button>
                 </div>
                 {/* profile */}
                 <div className="border-b-2 border-stone-400">
