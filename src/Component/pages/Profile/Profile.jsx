@@ -6,7 +6,7 @@ import { AuthContent } from "../../../Provider/AuthProvider";
 
 const Profile = () => {
     // 
-    const {logoutUser}=useContext(AuthContent);
+    const {logoutUser,user}=useContext(AuthContent);
     // 
     const handleLogout=()=>{
         logoutUser()
@@ -18,7 +18,7 @@ const Profile = () => {
 
 
     return (
-        <div className="h-screen">
+        <div className="h-screen ">
             <div className="container text-white mx-auto px-3">
                 {/* banner */}
                 <div className="w-full h-64 flex items-center justify-center hover:bg-stone-400 bg-white rounded-lg">
@@ -30,8 +30,8 @@ const Profile = () => {
                 <div className="pt-7 border-b-2 pb-5 border-stone-400 flex items-center gap-5 px-5">
                     <CgProfile className="text-6xl" />
                     <div className="lg:hidden md:hidden xl:flex flex-col">
-                        <h4 className="text-2xl font-semibold">Prosanta Roy</h4>
-                        <p className="text-xl font-normal">@royprosanta</p>
+                        <h4 className="text-2xl font-semibold">{user ? user.displayName : "UnName32"}</h4>
+                        <p className="text-xl font-normal">@{user.email.slice(0, 9)}12</p>
                     </div>
                     {/* logout */}
                     <button onClick={handleLogout} className="bg-[#18ff93] text-white px-4 py-2 text-2xl rounded-lg font-medium">LogOut</button>

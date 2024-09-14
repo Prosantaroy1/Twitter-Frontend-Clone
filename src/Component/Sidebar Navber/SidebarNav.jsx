@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import { BsTwitterX } from "react-icons/bs";
 import { CgMoreO } from "react-icons/cg";
 import { FaUser, FaUserCircle } from "react-icons/fa";
@@ -8,11 +9,17 @@ import { IoMdHome, IoMdNotifications } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
 import { LuServerCrash } from "react-icons/lu";
 import { NavLink } from "react-router-dom";
+import { AuthContent } from "../../Provider/AuthProvider";
 
 
 const SidebarNav = () => {
+
+    // user
+    const { user } = useContext(AuthContent);
+    console.log(user)
+
     return (
-        <div className="font-fontpp overflow-y-hidden text-white pl-16 flex lg:items-center md:items-center xl:items-start  flex-col gap-8 pt-9">
+        <div className="font-fontpp  overflow-y-scroll   text-white pl-16 flex lg:items-center md:items-center xl:items-start  flex-col gap-8 pt-9">
             {/* logo */}
             <div className="mx-2 ">
                 <NavLink to='/'>
@@ -68,7 +75,7 @@ const SidebarNav = () => {
                 </li>
             </ul>
             {/* User Profile */}
-            <div className="flex hover:bg-slate-300 hover:text-black px-2 py-2 hover:rounded-3xl  items-center gap-12 justify-center">
+            <div className="flex hover:bg-slate-300 hover:text-black px-2 py-2 hover:rounded-3xl  items-center gap-3 justify-center">
                 <NavLink to='/profile'>
                     {/* user img */}
                     <div><FaUserCircle className="text-6xl" /></div>
@@ -76,8 +83,9 @@ const SidebarNav = () => {
                 {/* user name */}
                 <div className="lg:hidden md:hidden xl:flex flex-col ">
                     <NavLink to='/profile'>
-                        <h4 className="text-2xl font-semibold">Prosanta Roy</h4>
-                        <p className="text-xl font-normal">@royprosanta</p>
+                        <h4 className="text-xl font-semibold">{user ? user.
+                            displayName :""}</h4>
+                        <p className="text-xl font-normal">@{user.email.slice(0, 9)}12</p>
                     </NavLink>
                 </div>
                 {/* edit */}

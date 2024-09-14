@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 
 const Register = () => {
     // 
-    const { signupUser}=useContext(AuthContent);
+    const { signupUser,updateName}=useContext(AuthContent);
     // navigation
     const navigate= useNavigate();
     //
@@ -16,14 +16,24 @@ const Register = () => {
         handleSubmit,
     } = useForm();
     const onSubmit = (data) => {
+        console.log(data.name)
         signupUser(data.email, data.password)
         .then(res=>{
             const users =res.user;
             console.log(users)
-            Swal.fire("Succesfuuly create Account.");
+            updateName(data.name)
+            Swal.fire("Succesfuuly create Account.");  
             navigate('/login')
         })
         .then(error=>{
+            console.log(error);
+            
+        })
+        updateName(data.name)
+        .then(()=>{
+            console.log('update profile Users');
+        })
+        .catch(error=>{
             console.log(error);
         })
     }

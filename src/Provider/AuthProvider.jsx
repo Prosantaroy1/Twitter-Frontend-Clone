@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { app } from "../Firebase/firebase.config";
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { updateProfile } from "firebase/auth/cordova";
 
 export const AuthContent= createContext(null);
 // 
@@ -20,6 +21,12 @@ const AuthProvider = ({children}) => {
     // signIn
     const signinUser=(email, password)=>{
         return signInWithEmailAndPassword(auth, email, password);
+    }
+    // Name
+    const updateName=(name)=>{
+        return updateProfile(auth.currentUser, {
+            displayName: name,
+        })
     }
     // logout
     const logoutUser=()=>{
@@ -42,6 +49,7 @@ const AuthProvider = ({children}) => {
         logoutUser,
         signinUser,
         signupUser,
+        updateName
     }
     return (
         <AuthContent.Provider value={authInfo}>

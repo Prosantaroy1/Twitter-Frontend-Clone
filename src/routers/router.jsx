@@ -10,12 +10,14 @@ import LoginPage from "../Component/pages/Login Page/LoginPage";
 import Register from "../Component/pages/Register pgae/Register";
 import PrivetRouter from "./PrivetRouter";
 import Userlogout from "../Component/pages/User logout/Userlogout";
+import ErrorPage from "../Component/pages/ErrorPage/ErrorPage";
 
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <PrivetRouter><Main/></PrivetRouter>,
+        errorElement: <ErrorPage/>,
         children: [
              {
                 path: '/',

@@ -8,30 +8,34 @@ import img3 from '../../assets/imgPost/post2.png'
 import img4 from '../../assets/imgPost/post3.jfif'
 import img5 from '../../assets/imgPost/post4.jfif'
 
+
 const MainHome = () => {
+    // 
+
     return (
         <>
-        <div className="font-fontpp relative">
-            {/* main navber */} 
-            <div className='px-4 text-white shadow  py-6 border-b-2 border-slate-500'>
-                <ul className="flex  justify-between items-center">
-                    <li className="text-2xl font-semibold"><NavLink to='/'>For you</NavLink></li>
-                    <li className="text-2xl font-semibold"><NavLink>Following</NavLink></li>
-                </ul>
+            <div className="font-fontpp relative">
+                       
+                {/* main navber */}
+                <div className='px-4 text-white shadow  py-6 border-b-2 border-slate-500'>
+                    <ul className="flex  justify-between items-center">
+                        <li className="text-2xl font-semibold"><NavLink to='/'>For you</NavLink></li>
+                        <li className="text-2xl font-semibold"><NavLink>Following</NavLink></li>
+                    </ul>
+                </div>
+                {/* post and data post section */}
+                <PostSec />
+                {/* post */}
+                <PostCard img={img1} />
+                <PostCard img={img2} />
+                <PostCard img={img3} />
+                <PostCard img={img4} />
+                <PostCard img={img5} />
+                <PostCard img={img2} />
+                <PostCard img={img3} />
+                <PostCard img={img4} />
+                <PostCard img={img5} />
             </div>
-            {/* post and data post section */}
-            <PostSec/>
-            {/* post */}
-            <PostCard img={img1}/>
-            <PostCard img={img2}/>
-            <PostCard img={img3}/>
-            <PostCard img={img4}/>
-            <PostCard img={img5}/>
-            <PostCard img={img2}/>
-            <PostCard img={img3}/>
-            <PostCard img={img4}/>
-            <PostCard img={img5}/>
-        </div>
         </>
     );
 };
