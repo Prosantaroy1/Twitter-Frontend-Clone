@@ -16,7 +16,7 @@ const Register = () => {
         handleSubmit,
     } = useForm();
     const onSubmit = (data) => {
-        console.log(data.name)
+        
         signupUser(data.email, data.password)
         .then(res=>{
             const users =res.user;
@@ -56,6 +56,7 @@ const Register = () => {
                         {/* register your input into the hook by invoking the "register" function */}
                         <input className="text-black rounded w-full px-5 py-3 text-xl" placeholder="Enter your name?" type="text" {...register("name", { required: true })} />
                         <br /><br />
+                       
                         {/* email */}
                         <input className="text-black rounded w-full px-5 py-3 text-xl" placeholder="Enter your Email?" type="email" {...register("email", { required: true })} />
                         <br /><br />

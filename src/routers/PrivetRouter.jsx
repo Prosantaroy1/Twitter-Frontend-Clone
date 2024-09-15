@@ -3,20 +3,23 @@ import { AuthContent } from "../Provider/AuthProvider";
 import { Navigate, useLocation } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
-const PrivetRouter = ({children}) => {
-// 
-    const {user,loading}=useContext(AuthContent);
+const PrivetRouter = ({ children }) => {
     // 
-    const location= useLocation();
+    const { user,  loading } = useContext(AuthContent);
+    console.log(user);
+    // 
+    const location = useLocation();
 
-    if(user){
+    if (user) {
         return children;
     }
-    if(loading){
+
+    if (loading) {
         <p>loading page..........</p>
     }
 
-    return <Navigate to='/login' state={{from: location}}/>
+
+    return <Navigate to='/login' state={{ from: location }} />
 };
 
 export default PrivetRouter;

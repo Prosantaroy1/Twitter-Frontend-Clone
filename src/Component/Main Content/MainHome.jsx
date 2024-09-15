@@ -1,40 +1,41 @@
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import PostSec from "../pages/post Page/PostSec";
-import PostCard from "../pages/Post Card/PostCard";
-// img
-import img1 from '../../assets/imgPost/GWqPP2FXkAE3Dy_.jfif'
-import img2 from '../../assets/imgPost/post1.png'
-import img3 from '../../assets/imgPost/post2.png'
-import img4 from '../../assets/imgPost/post3.jfif'
-import img5 from '../../assets/imgPost/post4.jfif'
-
+import PostCard from '../pages/Post Card/PostCard';
+import usePost from "../../hooks/usePost";
 
 const MainHome = () => {
-    // 
+    const [post] = usePost();
+    const [reversedPost, setReversedPost] = useState([]);
+
+    // Reverse the post data once when it's fetched
+    useEffect(() => {
+        if (post) {
+            const reversed = [...post].reverse(); // Create a reversed copy
+            setReversedPost(reversed);
+        }
+    }, [post]); // Dependency on post
 
     return (
         <>
             <div className="font-fontpp relative">
-                       
-                {/* main navber */}
-                <div className='px-4 text-white shadow  py-6 border-b-2 border-slate-500'>
-                    <ul className="flex  justify-between items-center">
+                {/* Main Navbar */}
+                <div className='px-4 text-white shadow py-6 border-b-2 border-slate-500'>
+                    <ul className="flex justify-between items-center">
                         <li className="text-2xl font-semibold"><NavLink to='/'>For you</NavLink></li>
                         <li className="text-2xl font-semibold"><NavLink>Following</NavLink></li>
                     </ul>
                 </div>
-                {/* post and data post section */}
+                
+                {/* Post Submission Section */}
                 <PostSec />
-                {/* post */}
-                <PostCard img={img1} />
-                <PostCard img={img2} />
-                <PostCard img={img3} />
-                <PostCard img={img4} />
-                <PostCard img={img5} />
-                <PostCard img={img2} />
-                <PostCard img={img3} />
-                <PostCard img={img4} />
-                <PostCard img={img5} />
+
+                {/* Posts Display Section */}
+                <div>
+                    {reversedPost.map((item, idx) => (
+                        <PostCard key={idx} item={item} />
+                    ))}
+                </div>
             </div>
         </>
     );

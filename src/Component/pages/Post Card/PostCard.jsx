@@ -1,3 +1,4 @@
+
 import { BiRepost } from "react-icons/bi";
 import { CiBookmark } from "react-icons/ci";
 import { FaUserCircle } from "react-icons/fa";
@@ -8,8 +9,13 @@ import { LuMessageSquare } from "react-icons/lu";
 import { MdFavoriteBorder, MdOutlineViewKanban } from "react-icons/md";
 
 
+
 // eslint-disable-next-line react/prop-types
-const PostCard = ({ img }) => {
+const PostCard = ({item}) => {
+    // 
+    // eslint-disable-next-line react/prop-types
+    const {title, img, name} =item;
+
     return (
         <div className="px-3 py-8 border-b-2 border-stone-500 flex items-start gap-2 md:gap-5 font-fontpp ">
             {/* post logo */}
@@ -22,9 +28,9 @@ const PostCard = ({ img }) => {
                 <div className="flex md:justify-between gap-24 items-start  md:items-center">
                     <div className="flex md:flex-row flex-col items-center md:gap-4">
                         <h3 className="md:text-3xl text-2xl flex items-center font-semibold">
-                            Prosanta <IoCheckmarkCircle className="text-green-500 text-2xl" />
+                           {name}<IoCheckmarkCircle className="text-green-500 text-2xl" />
                         </h3>
-                        <h4 className="text-xl font-medium">@prosanta12</h4>
+                        <h4 className="text-xl font-medium">@{name}</h4>
                     </div>
                     {/* ... */}
                     <div>
@@ -33,8 +39,7 @@ const PostCard = ({ img }) => {
                 </div>
                 {/* title */}
                 <p className="md:text-xl md:pr-0 pr-3 pt-2 font-medium ">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam mollitia ullam eveniet!
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    {title}
                 </p>
                 {/* img */}
                 <div className="pt-4 rounded-xl">

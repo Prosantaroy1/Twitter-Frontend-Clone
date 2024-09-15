@@ -8,9 +8,9 @@ import Message from "../Component/pages/Message/Message";
 import Profile from "../Component/pages/Profile/Profile";
 import LoginPage from "../Component/pages/Login Page/LoginPage";
 import Register from "../Component/pages/Register pgae/Register";
-import PrivetRouter from "./PrivetRouter";
 import Userlogout from "../Component/pages/User logout/Userlogout";
 import ErrorPage from "../Component/pages/ErrorPage/ErrorPage";
+import PrivetRouter from "./PrivetRouter"
 
 
 const router = createBrowserRouter([

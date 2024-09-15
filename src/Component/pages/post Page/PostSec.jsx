@@ -1,12 +1,49 @@
 import { FaUserCircle } from "react-icons/fa";
 import { useForm } from "react-hook-form";
+import  { axiosPublic } from "../../../hooks/useAxios";
+import { useContext } from "react";
+import { AuthContent } from "../../../Provider/AuthProvider";
+import Swal from "sweetalert2";
+import usePost from "../../../hooks/usePost";
+
+// imgbb
+const imgbb_key=import.meta.env.VITE_key;
+const imabb_api=`https://api.imgbb.com/1/upload?key=${imgbb_key}`
 
 
 const PostSec = () => {
+    // user name
+    const {user}= useContext(AuthContent);
+    // tansk
+    const [, refetch]= usePost();
     // hook
     const { register, handleSubmit, } = useForm();
-    const onSubmit = data => {
+    const onSubmit = async(data) => {
         console.log(data);
+        // img for
+        const imgFile= {image: data.image[0]};
+        // console.log(imgFile)
+        const res= await axiosPublic.post(imabb_api, imgFile,{
+            headers: {
+                'Content-Type': 'multipart/form-data'
+              }
+        });
+        // database post
+        if(res.data.success){
+            const postdata={
+                name: user.displayName,
+                title: data.title,
+                img: res.data.data.display_url
+            }
+            console.log(postdata);
+            const userPost= await axiosPublic.post('/user', postdata);
+            console.log(userPost.data);
+            if(userPost.data.insertedId){
+                Swal.fire("Succesfully post.");
+                refetch();
+            }
+        }
+       
     }
 
     return (

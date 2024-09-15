@@ -83,8 +83,7 @@ const SidebarNav = () => {
                 {/* user name */}
                 <div className="lg:hidden md:hidden xl:flex flex-col ">
                     <NavLink to='/profile'>
-                        <h4 className="text-xl font-semibold">{user ? user.
-                            displayName :""}</h4>
+                        <h4 className="text-xl font-semibold">{user ? user.displayName :""}</h4>
                         <p className="text-xl font-normal">@{user.email.slice(0, 9)}12</p>
                     </NavLink>
                 </div>
